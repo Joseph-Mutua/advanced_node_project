@@ -9,7 +9,7 @@ const exec = mongoose.Query.prototype.exec;
 
 mongoose.Query.prototype.cache = function (options = {}) {
   this.useCache = true;
-  this.hashKey = JSON.stringify(options.key || "")
+  this.hashKey = JSON.stringify(options.key || "");
   return this;
 };
 
@@ -43,4 +43,10 @@ mongoose.Query.prototype.exec = async function () {
 
   client.hset(this.hashKey, key, JSON.stringify(result), "EX", 10);
   return result;
+};
+
+module.exports = {
+  clearHash(hashKey) {
+    client.del(JSON.stringify(hashKey));
+  },
 };
