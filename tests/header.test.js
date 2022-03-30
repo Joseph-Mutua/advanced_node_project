@@ -24,5 +24,5 @@ test("Clicking Login Starts OAuth Flow", async () => {
   await page.click(".right a");
 
   const url = await page.url();
-  console.log(url);
+   expect(url).toMatch(/accounts\.google\.com/) //escape the full Stops
 });
