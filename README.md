@@ -1,6 +1,16 @@
 # Advanced Node Project
 A sample blog project built with advanced node features such as Caching with Redis, Headless Browser Testing and a Continuos Integration Pioeline
 
+# Authentication
+## The Google OAuth Flow
+1. User visits `/auth/google`
+2. User is Forwarded to Google from server
+3. User enters login, and is redirected back to `/auth/google/callback` on the server
+4. Server asks for more details about user from Google
+5. Google responds with User profile
+6. Server sets cookie on users browser that identifies them
+7. All future requests include cookie data that identifies this user
+
 # Testing
 Testing is done using the popular Jest Testing Library
 
