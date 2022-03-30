@@ -6,12 +6,12 @@ class CustomPage {
       headless: false,
     });
 
-    const page = browser.newPage();
+    const page = await browser.newPage();
     const customPage = new CustomPage(page);
 
     return new Proxy(customPage, {
       get: function (target, property) {
-        return customPage[property] || page[property] || browser[property];
+        return customPage[property] || browser[property] || page[property];
       },
     });
   }
