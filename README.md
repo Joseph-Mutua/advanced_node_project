@@ -25,7 +25,15 @@ A cookie is automatically sent to Server along with two properties:
    - If user doesn't exist, assume the user isn't signed in
 
 ## Session Flowchart
-
+1. Request goes into middleware (cookie-session)
+2. Coookie-session pulls properties 'session' and 'session.sig' off cookie
+3. It uses 'session.sig' to ensure 'session' wasn't manipulated.
+4. it Decodes 'session' into a JS object
+5. Places that Object on 'req.session' which is then passed onto the Passport middleware
+   
+6. Passport looks at req.session and tries to find 'req.session.passport.user'
+7. If an ID is stored there, pass it to 'deserializeUser'
+8. Get back a user and assign it to user then pass on the function to the request handler
 
 
 # Testing
@@ -56,6 +64,12 @@ Page -> Represents one individual Tab
 - write assertion to make sure the content is Correct
 - REPEAT
 
+
+### How to Trick cookie-Session For Authentication Testing
+1. Create a Page instance
+2. Take an existing user ID and generate a fake session object with it
+3. Sign the session object with keygrip
+4. Set the Session and signature on our Page instance as cookies
 
 ## Installation
 
