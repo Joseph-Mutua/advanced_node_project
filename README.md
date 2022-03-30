@@ -7,18 +7,20 @@ Testing is done using the popular Jest Testing Library
 ## Testing flow
 1. Start React and Express Apps
 2. Run 'npm run test'
-3. start Jest Suite
+3. Start Jest Suite
 4. Boot up a 'headless' version of chromium
 5. Programatically instruct Chromium to visit 'localhost:3000'
 6. Programatically instruct Chromium to Click elements on the Screen
 7. Make assertion about content on screen
 
+## Challenges
+- Launching Chromium programatically and interacting with it from a test suite
+- How to make assertions in Jest about stuff that's happening in a Chrome Window
+- How to simulate 'logging' in as a user -> Through Google OAuth
 
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
+### Puppeteer -> Starts Up Chromimum
+### Browser -> Represents an open Browser Window
+### Page -> Represents one individual Tab
 
 
 ## Installation
