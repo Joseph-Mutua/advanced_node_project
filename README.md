@@ -1,6 +1,11 @@
 # Advanced Node Project
 A sample blog project built with advanced node features such as Caching with Redis, Headless Browser Testing and a Continuos Integration Pioeline
 
+# Project Breakdown
+![Project Structure](./images/diagrams-01 - goals.drawio.png)
+
+
+
 # Authentication
 ## The Google OAuth Flow
 1. User visits `/auth/google`
@@ -18,6 +23,17 @@ A cookie is automatically sent to Server along with two properties:
    - Server uses the User ID to lookup the user in Database
    - If user exists --> The incoming request belongs to that user
    - If user doesn't exist, assume the user isn't signed in
+
+## Session Flowchart
+                Request
+                    |
+                    v
+MIDDLEWARE    Cookie-Session -> Pulls properties 'session'  ->  Uses session.sig to e
+                                and session.sig off cookies
+                    |
+                    V
+                Passport
+
 
 # Testing
 Testing is done using the popular Jest Testing Library
