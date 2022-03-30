@@ -13,7 +13,7 @@ Testing is done using the popular Jest Testing Library
 6. Programatically instruct Chromium to Click elements on the Screen
 7. Make assertion about content on screen
 
-## Challenges
+### Challenges
 - Launching Chromium programatically and interacting with it from a test suite
 - How to make assertions in Jest about stuff that's happening in a Chrome Window
 - How to simulate 'logging' in as a user -> Through Google OAuth
@@ -21,6 +21,13 @@ Testing is done using the popular Jest Testing Library
 ### Puppeteer -> Starts Up Chromimum
 ### Browser -> Represents an open Browser Window
 ### Page -> Represents one individual Tab
+
+- Launch Chromium
+- Navigate to App
+- Click on Stuff on Screen
+- Use a DOM Selector to retrieve the content of an element
+- write assertion to make sure the content is Correct
+- REPEAT
 
 
 ## Installation
