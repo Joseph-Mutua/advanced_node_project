@@ -2,7 +2,7 @@
 A sample blog project built with advanced node features such as Caching with Redis, Headless Browser Testing and a Continuos Integration Pioeline
 
 # Project Breakdown
-![Project Structure](./images/diagrams-01 - goals.drawio.png)
+![Project Structure](images/diagrams-01-goals.drawio.png)
 
 
 
@@ -25,14 +25,7 @@ A cookie is automatically sent to Server along with two properties:
    - If user doesn't exist, assume the user isn't signed in
 
 ## Session Flowchart
-                Request
-                    |
-                    v
-MIDDLEWARE    Cookie-Session -> Pulls properties 'session'  ->  Uses session.sig to e
-                                and session.sig off cookies
-                    |
-                    V
-                Passport
+
 
 
 # Testing
@@ -52,9 +45,9 @@ Testing is done using the popular Jest Testing Library
 - How to make assertions in Jest about stuff that's happening in a Chrome Window
 - How to simulate 'logging' in as a user -> Through Google OAuth
 
-### Puppeteer -> Starts Up Chromimum
-### Browser -> Represents an open Browser Window
-### Page -> Represents one individual Tab
+Puppeteer -> Starts Up Chromimum
+Browser -> Represents an open Browser Window
+Page -> Represents one individual Tab
 
 - Launch Chromium
 - Navigate to App
