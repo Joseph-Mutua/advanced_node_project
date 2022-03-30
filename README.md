@@ -71,6 +71,11 @@ Page -> Represents one individual Tab
 3. Sign the session object with keygrip
 4. Set the Session and signature on our Page instance as cookies
 
+### Test Factories
+Create two Factories (Helper functions) to generate a resource solelly for use in testing
+- Session Factory
+- User Factory
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
