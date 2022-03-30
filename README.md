@@ -65,7 +65,7 @@ Page -> Represents one individual Tab
 - REPEAT
 
 
-### How to Trick cookie-Session For Authentication Testing
+### How to Trick Cookie-Session For Authentication Testing
 1. Create a Page instance
 2. Take an existing user ID and generate a fake session object with it
 3. Sign the session object with keygrip
