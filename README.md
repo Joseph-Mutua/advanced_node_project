@@ -11,6 +11,14 @@ A sample blog project built with advanced node features such as Caching with Red
 6. Server sets cookie on users browser that identifies them
 7. All future requests include cookie data that identifies this user
 
+## Operations after someone signs In From Browser
+A cookie is automatically sent to Server along with two properties: 
+   - session.sig -> Used to ensure session sent to the user wasn't tampered with
+   - session -> Server accesses info in session (*User ID*).
+   - Server uses the User ID to lookup the user in Database
+   - If user exists --> The incoming request belongs to that user
+   - If user doesn't exist, assume the user isn't signed in
+
 # Testing
 Testing is done using the popular Jest Testing Library
 
