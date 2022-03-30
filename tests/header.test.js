@@ -12,7 +12,7 @@ beforeEach(async () => {
 });
 
 afterEach(async () => {
-  await browser.close();
+  // await browser.close();
 });
 
 test("Header has the Correct Text", async () => {
@@ -48,5 +48,7 @@ test("When signed in, shows logout button", async () => {
 
   const sig = keygrip.sign("session=" + sessionString);
 
-  console.log(sessionString, sig)
+  await page.setCookie({ name: "session", value: sessionString });
+  await page.setCookie({ name: "session.sig", value: sig });
+  await page.goto("localhost:3000");
 });
