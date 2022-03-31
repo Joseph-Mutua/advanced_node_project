@@ -15,7 +15,7 @@ afterEach(async () => {
 // Describe statement for grouping a set of related sets
 // with a beforeEach statement common to all tests under this
 
-describe("Whenn loggged in", async () => {
+describe("When loggged in", async () => {
   beforeEach(async () => {
     await page.login();
     await page.click("a.btn-floating");
@@ -27,6 +27,21 @@ describe("Whenn loggged in", async () => {
     expect(label).toEqual("Blog Title");
   });
 
+  describe("And using valid inputs", async () => {
+    beforeEach(async () => {
+      await page.type(".title input", "My Title");
+      await page.type(".content input", "My Content");
+      await page.click("form button");
+    });
+
+    test("Submitting takes user to review screen", async () => {
+      const text = await page.getContentsOf("h5");
+      expect(text).toEqual("Please confirm your entries");
+    });
+
+    test("Submitting then saving adds blog to index page", async () => {});
+  });
+
   describe("And using invalid inputs", async () => {
     beforeEach(async () => {
       await page.click("form button");
@@ -35,8 +50,8 @@ describe("Whenn loggged in", async () => {
       const titleError = await page.getContentsOf(".title .red-text");
       const contentError = await page.getContentsOf(".content .red-text");
 
-      expect(titleError).toEqual("You must provide a value")
-      expect(contentError).toEqual("You must provide a value")
+      expect(titleError).toEqual("You must provide a value");
+      expect(contentError).toEqual("You must provide a value");
     });
   });
 });
