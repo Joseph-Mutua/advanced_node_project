@@ -101,6 +101,18 @@ CI Script is `nohup npm &`
 **npm run start:** Run the server
 **&:** Run the server in a subshell (in the background)
 
+CI mode
+--- Starts up the Express API
+--- The Expresses server figurs out the address of MongoDB and the Redis Server is
+
+## Server Configuration
+1. Add ci.js key file
+2. Fix Redis URL in services/cache.js
+3. Add Redis URL to dev.js and ci.js
+4. Add mongoDB URI to ci.js
+5. Make sure server starts on port 3000 in CI mode
+6. Make sure server serves react client files in CI mode
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
