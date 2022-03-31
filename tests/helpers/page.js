@@ -70,6 +70,7 @@ class CustomPage {
   //     })
   //   );
   // }
+
 }
 
 module.exports = CustomPage;

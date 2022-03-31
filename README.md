@@ -79,6 +79,22 @@ Create two Factories (Helper functions) to generate a resource solelly for use i
 ## Blog Tests FlowChart
 ![Blog Tests](images/blogtests.png)
 
+
+# Continuous Integration
+This is set up to merge all code changes into a single branch on a remote repository
+**CI Server**: This will runs automatic checks(tests) on the codebase to ensure changes haven't broken anything
+
+## CI FLOW
+1. Developer pushes code to github
+2. CI server detects that a new push of code has occured
+3. CI server clones project to a cloud-based virtual machine
+4. CI server runs all tests
+5. If all tests pass, CI Server marks build as 'passing' and does some optional followup
+   
+CI Providers - A company that will provision a CI server on your behalf: Travis, Circle, Codeship, AWS Codebuild
+This Project uses **Travis CI**
+
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.

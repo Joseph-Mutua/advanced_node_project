@@ -85,20 +85,20 @@ describe("User is not logged in", async () => {
 
   // SUPER ADVANCED REFACTORING
 
-  //   const actions = [
-  //     {
-  //       method: "get",
-  //       path: "/api/blogs",
-  //     },
-  //     {
-  //       method: "post",
-  //       path: "/api/blogs",
-  //       data: {
-  //         title: "My Title",
-  //         content: "My Content",
-  //       },
-  //     },
-  //   ];
+    const actions = [
+      {
+        method: "get",
+        path: "/api/blogs",
+      },
+      {
+        method: "post",
+        path: "/api/blogs",
+        data: {
+          title: "My Title",
+          content: "My Content",
+        },
+      },
+    ];
 
 
   // test("Blog related actions are prohibited", async () => {
@@ -108,4 +108,5 @@ describe("User is not logged in", async () => {
   //     expect(result).toEqual({ error: "You must log in!" });
   //   }
   // });
+
 });
