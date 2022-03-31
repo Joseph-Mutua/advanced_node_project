@@ -96,6 +96,10 @@ This Project uses **Travis CI**
 
 ## Server Setup
 ![Server Setup](images/servers.png)
+CI Script is `nohup npm &`
+**nohup:** If the shell is closed, don't kill anything this command creates
+**npm run start:** Run the server
+**&:** Run the server in a subshell (in the background)
 
 ## Installation
 
