@@ -76,6 +76,9 @@ Create two Factories (Helper functions) to generate a resource solelly for use i
 - Session Factory
 - User Factory
 
+## Blog Tests FlowChart
+![Blog Tests](images/blogtests.png)
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
