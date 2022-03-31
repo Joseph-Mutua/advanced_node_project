@@ -94,6 +94,8 @@ This is set up to merge all code changes into a single branch on a remote reposi
 CI Providers - A company that will provision a CI server on your behalf: Travis, Circle, Codeship, AWS Codebuild
 This Project uses **Travis CI**
 
+## Server Setup
+![Server Setup](images/servers.png)
 
 ## Installation
 
