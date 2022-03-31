@@ -1,5 +1,5 @@
 # Advanced Node Project
-A sample blog project built with advanced node features such as Caching with Redis, Headless Browser Testing and a Continuos Integration Pioeline
+A sample blog project built with advanced node features such as Caching with Redis, Headless Browser Testing and a Continuos Integration Pipeline
 
 # Project Breakdown
 ![Project Structure](images/diagrams-01-goals.drawio.png)
@@ -72,7 +72,7 @@ Page -> Represents one individual Tab
 4. Set the Session and signature on our Page instance as cookies
 
 ### Test Factories
-Create two Factories (Helper functions) to generate a resource solelly for use in testing
+Two Factories (Helper functions) are used to generate a resource solely for use in testing
 - Session Factory
 - User Factory
 
@@ -91,19 +91,21 @@ This is set up to merge all code changes into a single branch on a remote reposi
 4. CI server runs all tests
 5. If all tests pass, CI Server marks build as 'passing' and does some optional followup
    
-CI Providers - A company that will provision a CI server on your behalf: Travis, Circle, Codeship, AWS Codebuild
-This Project uses **Travis CI**
+This Project uses **Travis CI** to provision a CI server on our behalf
 
 ## Server Setup
 ![Server Setup](images/servers.png)
+
+
 CI Script is `nohup npm &`
-**nohup:** If the shell is closed, don't kill anything this command creates
-**npm run start:** Run the server
-**&:** Run the server in a subshell (in the background)
+- **nohup:** If the shell is closed, don't kill anything this command creates
+- **npm run start:** Run the server
+- **&:** Run the server in a subshell (in the background)
 
 CI mode
---- Starts up the Express API
---- The Expresses server figurs out the address of MongoDB and the Redis Server is
+
+- Starts up the Express API
+- The Expresses server figurs out the address of MongoDB and the Redis Server is
 
 ## Server Configuration
 1. Add ci.js key file
@@ -113,12 +115,34 @@ CI mode
 5. Make sure server starts on port 3000 in CI mode
 6. Make sure server serves react client files in CI mode
 
+# Image Upload
+## Big Image Upload Issues
+1. Where to physically store the images
+2. How images will get to the place they should be stored
+3. How to relate images to a particular blog post 
+   
+## Upload Process Issues
+1. Only signed in users should be able to upload
+2. The uploaded image needs to be tied to the blog post that's being created
+3. Only files ending in image file formats/extensions (.jpg, .png etc) should be uploaded
+   
+## Image Upload Pipeline
+![Image Upload Pipeline](images/imageupload.png)
+
+1. From REACT client, issue a GET request to backend API to request a presigned URL
+2. Use the presigned URL to upload the file to AWS S3
+3. Issue a POST request to backend API to create a blog post.
+4. Navigate the user back to the list of blogs
+5. Tell the Redux side of the app about the new blog post that was created
+
 ## Installation
 ```bash
 git clone <url>
 npm install
 npm run start
 ```
+
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
