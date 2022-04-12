@@ -51,12 +51,13 @@ class BlogFormReview extends Component {
 
   onFileChange(event) {
     this.setState({ file: event.target.files[0] });
+    
   }
 
   render() {
     return (
       <form onSubmit={this.onSubmit.bind(this)}>
-        <h5>Please confirm your entries!!!</h5>
+        <h5>Please confirm your entries</h5>
         {this.renderFields()}
 
         <h5>Add An Image</h5>
