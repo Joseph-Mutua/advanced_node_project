@@ -12,10 +12,14 @@ module.exports = (app) => {
   app.get("/api/upload", requireLogin, (req, res) => {
     const key = `${req.user.id}/${uuid()}.jpeg`;
 
-    s3.getSignedUrl("putObject", {
-      Bucket: "my-node-blog-bucket4020",
-      ContentType: "jpeg",
-      Key: key,
-    }, (err, url) => res.send({key, url}));
+    s3.getSignedUrl(
+      "putObject",
+      {
+        Bucket: "my-node-blog-bucket4020",
+        ContentType: "image/jpeg",
+        Key: key,
+      },
+      (err, url) => res.send({ key, url })
+    );
   });
 };
