@@ -35,6 +35,7 @@ A cookie is automatically sent to Server along with two properties:
    - If user doesn't exist, assume the user isn't signed in
 
 ## Session Flowchart
+![Session Flowchart](images/sessions.png)
 1. Request goes into middleware (cookie-session)
 2. Coookie-session pulls properties 'session' and 'session.sig' off cookie
 3. It uses 'session.sig' to ensure 'session' wasn't manipulated.
@@ -46,7 +47,7 @@ A cookie is automatically sent to Server along with two properties:
 8. Get back a user and assign it to user then pass on the function to the request handler
 
 
-# Testing
+# Automated Headless Browser Testing
 Testing is done using the popular Jest Testing Library
 
 ## Testing flow
@@ -166,8 +167,10 @@ CI mode
 ```bash
 git clone <url>
 npm install
-npm run start
+npm run dev
 ```
+## Testing
+`npm run test`
 
 
 
