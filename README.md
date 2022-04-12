@@ -6,7 +6,15 @@ This is a README explaining the technical details and processes surrounding the 
 # Project Breakdown
 ![Project Structure](images/diagrams-01-goals.drawio.png)
 
-
+# Data Caching with Redis
+1. User visit `localhost:3000`
+2. React App loads in browser
+3. React App needs details about the current user and their blogs
+4. react App makes requests to get current user and blog list to backend
+5. Express Router handler sees request, tells Mongoose to get records
+6. Mongoose looks at cache and sees if the data has already been fetched: 
+   -  If data is in cache, return that immediately. Express responds to request
+   -  If data is not in cache, get it from MongoDB. Express responds to request, the fetched data is added to cache to speed up next query.
 
 # Authentication
 ## The Google OAuth Flow
